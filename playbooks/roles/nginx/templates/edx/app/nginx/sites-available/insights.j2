@@ -50,6 +50,16 @@ server {
     try_files $uri @proxy_to_app;
   }
 
+{% if NGINX_DJANGO_ADMIN_ACCESS_CIDRS %}
+  location /admin {
+    {% for cidr in NGINX_DJANGO_ADMIN_ACCESS_CIDRS %}
+      allow {{ cidr }};
+    {% endfor %}
+      deny all;
+      try_files $uri @proxy_to_app;
+  }
+{% endif %}
+
   # No basic auth security on the heartbeat url, so that ELB can use it
   location /status {
     try_files $uri @proxy_to_app;
