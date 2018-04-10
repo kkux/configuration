@@ -192,6 +192,8 @@ jenkins_common_splunk_batch_size: 4096
 JENKINS_SPLUNK_APP_URL: ''
 jenkins_common_splunk_retries: 3
 jenkins_common_splunk_ignored_jobs: ''
+jenkins_common_splunk_master_hostname: ''
+jenkins_common_splunk_event_source: ''
 jenkins_common_splunk_script_type: 'path'
 jenkins_common_splunk_script_path: ''
 jenkins_commmon_splunk_metadata:
