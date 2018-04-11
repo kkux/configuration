@@ -1,10 +1,13 @@
+- Role: edxapp
+  - Moved `PASSWORD_MIN_LENGTH`, `PASSWORD_MAX_LENGTH`, and `PASSWORD_COMPLEXITY` to generic_env_config to allow CMS and LMS to share these configurations
+
 - Role xqueue
   - Removed RabbitMQ in earlier changes in XQueue itself, we don't need any of the configuration
-    XQUEUE_RABBITMQ_USER XQUEUE_RABBITMQ_PASS XQUEUE_RABBITMQ_VHOST XQUEUE_RABBITMQ_HOSTNAME 
+    XQUEUE_RABBITMQ_USER XQUEUE_RABBITMQ_PASS XQUEUE_RABBITMQ_VHOST XQUEUE_RABBITMQ_HOSTNAME
     XQUEUE_RABBITMQ_PORT XQUEUE_RABBITMQ_TLS
   - Added NEWRELIC_APPNAME and NEWRELIC_LICENSE_KEY to the configuration files consumed by XQueue.
     Useful for external utilities that are reporting NR metrics.
-    
+
 - Role edx_django_service
   - Added maintenance page under the flag EDX_DJANGO_SERVICE_ENABLE_S3_MAINTENANCE.
   - Added the s3_maintenance.j2 file to point to the s3 maintenance page.
@@ -38,8 +41,8 @@
     to update databases while building images, where services are generally disabled).
 
 - Role: edxapp
-  - Added `EDXAPP_RETIRED_USERNAME_FMT`, `EDXAPP_RETIRED_EMAIL_FMT`, `EDXAPP_RETIRED_USER_SALTS`, and 
-  `EDXAPP_RETIREMENT_SERVICE_WORKER_USERNAME` to generic_env_config to allow user retirement to be configurable. 
+  - Added `EDXAPP_RETIRED_USERNAME_FMT`, `EDXAPP_RETIRED_EMAIL_FMT`, `EDXAPP_RETIRED_USER_SALTS`, and
+  `EDXAPP_RETIREMENT_SERVICE_WORKER_USERNAME` to generic_env_config to allow user retirement to be configurable.
 
 - Role: edxapp
   - Added `ENTERPRISE_REPORTING_SECRET` to CMS auth settings to allow edx-enterprise migrations to run.
