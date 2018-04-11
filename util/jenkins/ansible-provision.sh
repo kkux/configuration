@@ -218,6 +218,7 @@ NGINX_SET_X_FORWARDED_HEADERS: True
 NGINX_REDIRECT_TO_HTTPS: True
 EDX_ANSIBLE_DUMP_VARS: true
 migrate_db: "yes"
+dns_name: $dns_name
 COMMON_HOSTNAME: $dns_name
 COMMON_DEPLOYMENT: edx
 COMMON_ENVIRONMENT: sandbox
@@ -412,7 +413,7 @@ fi
 # set the hostname
 run_ansible set_hostname.yml -i "${deploy_host}," -e hostname_fqdn=${deploy_host} --user ubuntu
 
-if [[ $set_whitelabel == "true" && $recreate == "true" ]]; then
+if [[ $set_whitelabel == "true" ]]; then
     # Setup Whitelabel themes
     run_ansible whitelabel.yml -i "${deploy_host}," $extra_var_arg --user ubuntu
 fi
