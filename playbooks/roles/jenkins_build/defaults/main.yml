@@ -298,7 +298,7 @@ build_jenkins_splunk_metadata:
     - metadata.data_source: 'Console Log'
       metadata.config_item: 'Source Type'
       metadata.value: 'console_log'
-    - metadata.data_source: 'Queue_Information'
+    - metadata.data_source: 'Queue Information'
       metadata.config_item: 'Source Type'
       metadata.value: 'queue_information'
     - metadata.data_source: 'Slave Information'

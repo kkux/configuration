@@ -3,7 +3,7 @@ SPLUNK_APP_ENABLED: {{ jenkins_common_splunk_enabled }}
 SPLUNK_HOSTNAME: '{{ JENKINS_SPLUNK_HOSTNAME }}'
 SPLUNK_HOST_PORT: {{ JENKINS_SPLUNK_PORT }}
 USE_SSL: {{ jenkins_common_splunk_use_ssl }}
-SPLUNK_TOKEN: {{ JENKINS_SPLUNK_TOKEN }}
+SPLUNK_TOKEN: '{{ JENKINS_SPLUNK_TOKEN }}'
 RAW_EVENTS_ENABLED: {{ jenkins_common_splunk_raw_events_enabled }}
 MAX_EVENT_BATCH_SIZE: {{ jenkins_common_splunk_batch_size }}
 SPLUNK_APP_URL: '{{ JENKINS_SPLUNK_APP_URL }}'
